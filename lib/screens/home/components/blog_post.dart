@@ -8,9 +8,9 @@ import '../../../models/Blog.dart';
 
 class BlogPostCard extends StatelessWidget {
 
-  final Blog blog;
+  // final Blog blog;
   final VoidCallback press;
-  // final Product blog;
+  final Product blog;
 
   const BlogPostCard({Key? key, required this.blog, required this.press}) : super(key: key);
 
@@ -60,7 +60,7 @@ class BlogPostCard extends StatelessWidget {
                       width: kDefaultPadding,
                     ),
                     Text(
-                      blog.getCreateDate(),
+                      blog.getStock().toString(),
                       // blog.getCreateDate(),
                       style: Theme.of(context).textTheme.caption,
                     ),
@@ -70,7 +70,8 @@ class BlogPostCard extends StatelessWidget {
                   padding:
                   const EdgeInsets.symmetric(vertical: kDefaultPadding),
                   child: Text(
-                    blog.getBlogName(),
+                    blog.getDescription(),
+                    // blog.getBlogName(),
                     style: TextStyle(
                       fontSize: Responsive.isDesktop(context) ? 32.0 : 24.0,
                       fontFamily: "Raleway",
