@@ -7,8 +7,8 @@ import '../../../models/Product.dart';
 class BlogDetailScreen extends StatelessWidget {
   const BlogDetailScreen({Key? key, required this.blog}) : super(key: key);
 
-  // final Blog blog;
-  final Product blog;
+  final Blog blog;
+  // final Product blog;
 
   @override
   Widget build(BuildContext context) {
@@ -16,8 +16,8 @@ class BlogDetailScreen extends StatelessWidget {
       appBar: AppBar(
         title: Center(
           child: Text(
-            blog.getProductName(),
-            // blog.getBlogName(),
+            // blog.getProductName(),
+            blog.getBlogName(),
             style: const TextStyle(
               color: Color(0xFF8b8b8b),
             ),
@@ -34,7 +34,7 @@ class BlogDetailScreen extends StatelessWidget {
                 fit: BoxFit.cover,
               ),
               Text(blog.getDescription(),),
-              // Text(blog.getCreateDate(),),
+              Text(blog.getCreateDate(),),
             ],
           ),
         ),

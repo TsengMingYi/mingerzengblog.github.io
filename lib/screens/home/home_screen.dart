@@ -22,11 +22,11 @@ class HomeScreen extends StatelessWidget {
         Expanded(
           flex: 2,
           child: FutureBuilder(
-            future: getData1(),
+            future: getData(),
             builder: (context, snapshot) {
               return snapshot.hasData
                   ? Blogs(
-                      products: snapshot.data!,
+                      blogs: snapshot.data!,
                       // blogs: snapshot.data!,
                     )
                   : Center(child: Image.asset("assets/ripple.gif"));
@@ -61,10 +61,10 @@ class HomeScreen extends StatelessWidget {
 }
 
 class Blogs extends StatelessWidget {
-  const Blogs({Key? key, required this.products}) : super(key: key);
+  const Blogs({Key? key, required this.blogs}) : super(key: key);
 
-  // final List<Blog> blogs;
-  final List<Product> products;
+  final List<Blog> blogs;
+  // final List<Product> products;
   @override
   Widget build(BuildContext context) {
     return SingleChildScrollView(
@@ -72,19 +72,16 @@ class Blogs extends StatelessWidget {
         children: [
           ListView.builder(
             shrinkWrap: true,
-            itemCount: products.length,
+            itemCount: blogs.length,
             itemBuilder: (context, index) {
-              return KeepAliveWrapper(
-                keepAlive: true,
-                child: BlogPostCard(
-                  blog: products[index],
-                  press: (){
-                    // print("blogs length"+blogs.length.toString());
-                    Navigator.push(context, MaterialPageRoute(builder: (context){
-                      return BlogDetailScreen(blog: products[index]);
-                    }));
-                  },
-                ),
+              return BlogPostCard(
+                blog: blogs[index],
+                press: (){
+                  // print("blogs length"+blogs.length.toString());
+                  Navigator.push(context, MaterialPageRoute(builder: (context){
+                    return BlogDetailScreen(blog: blogs[index]);
+                  }));
+                },
               );
             },
           ),
