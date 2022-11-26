@@ -39,20 +39,18 @@ class HomeScreen extends StatelessWidget {
           ),
         if (!Responsive.isMobile(context))
           Expanded(
-            child: SingleChildScrollView(
-              child: Column(
-                children: const [
-                  Search(),
-                  SizedBox(
-                    height: kDefaultPadding,
-                  ),
-                  Categories(),
-                  SizedBox(
-                    height: kDefaultPadding,
-                  ),
-                  RecentPosts(),
-                ],
-              ),
+            child: Column(
+              children: const [
+                Search(),
+                SizedBox(
+                  height: kDefaultPadding,
+                ),
+                Categories(),
+                SizedBox(
+                  height: kDefaultPadding,
+                ),
+                RecentPosts(),
+              ],
             ),
           ),
       ],
@@ -67,37 +65,36 @@ class Blogs extends StatelessWidget {
   // final List<Product> products;
   @override
   Widget build(BuildContext context) {
-    return SingleChildScrollView(
-      child: Column(
-        children: [
-          ListView.builder(
-            shrinkWrap: true,
-            itemCount: blogs.length,
-          // _7e6fb9e9bee0cd95e7d266c75746eff4.spring-boot.link
-          // _d70cf70bfb596341db7f282e047dda79.zxwlrjxpwn.acm-validations.aws.
-            itemBuilder: (context, index) {
-              return KeepAliveWrapper(
-                keepAlive: true,
-                child: BlogPostCard(
-                  blog: blogs[index],
-                  press: (){
-                    // print("blogs length"+blogs.length.toString());
-                    Navigator.push(context, MaterialPageRoute(builder: (context){
-                      return BlogDetailScreen(blog: blogs[index]);
-                    }));
-                  },
-                ),
-              );
-            },
-          ),
-        ],
-        // children: List.generate(
-        //   blogs.length,
-        //   (index) => BlogPostCard(
-        //     blog: blogs[index],
-        //   ),
-        // ),
-      ),
+    return Column(
+      children: [
+        ListView.builder(
+          physics: const NeverScrollableScrollPhysics(),
+          shrinkWrap: true,
+          itemCount: blogs.length,
+        // _7e6fb9e9bee0cd95e7d266c75746eff4.spring-boot.link
+        // _d70cf70bfb596341db7f282e047dda79.zxwlrjxpwn.acm-validations.aws.
+          itemBuilder: (context, index) {
+            return KeepAliveWrapper(
+              keepAlive: true,
+              child: BlogPostCard(
+                blog: blogs[index],
+                press: (){
+                  // print("blogs length"+blogs.length.toString());
+                  Navigator.push(context, MaterialPageRoute(builder: (context){
+                    return BlogDetailScreen(blog: blogs[index]);
+                  }));
+                },
+              ),
+            );
+          },
+        ),
+      ],
+      // children: List.generate(
+      //   blogs.length,
+      //   (index) => BlogPostCard(
+      //     blog: blogs[index],
+      //   ),
+      // ),
     );
   }
 }

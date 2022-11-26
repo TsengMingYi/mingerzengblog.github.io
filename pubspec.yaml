@@ -32,6 +32,7 @@ dependencies:
   image_picker: ^0.8.6
   image_picker_for_web: ^2.1.10
   http: ^0.13.5
+  expandable_page_view: ^1.0.17
   url_launcher: ^6.1.6
   flutter_svg: ^1.1.6
   get: ^4.6.5

@@ -1,3 +1,4 @@
+import 'package:expandable_page_view/expandable_page_view.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_outlook/constants.dart';
 import 'package:flutter_outlook/screens/careers/careers_screen.dart';
@@ -25,19 +26,16 @@ class MainScreen extends StatelessWidget {
               padding: const EdgeInsets.all(kDefaultPadding),
               constraints: const BoxConstraints(maxWidth: kMaxWidth),
               child: SafeArea(
-                child: SizedBox(
-                  height: MediaQuery.of(context).size.height,
-                  child: PageView(
-                    physics: const NeverScrollableScrollPhysics(),
-                    controller: _controller.pageController,
-                    children: const [
-                      HomeScreen(),
-                      CasesScreen(),
-                      ServicesScreen(),
-                      CareersScreen(),
-                      ContactScreen(),
-                    ],
-                  ),
+                child: ExpandablePageView(
+                  physics: const NeverScrollableScrollPhysics(),
+                  controller: _controller.pageController,
+                  children: const [
+                    HomeScreen(),
+                    CasesScreen(),
+                    ServicesScreen(),
+                    CareersScreen(),
+                    ContactScreen(),
+                  ],
                 ),
               ),
             ),
