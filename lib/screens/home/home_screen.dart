@@ -73,15 +73,20 @@ class Blogs extends StatelessWidget {
           ListView.builder(
             shrinkWrap: true,
             itemCount: blogs.length,
+          // _7e6fb9e9bee0cd95e7d266c75746eff4.spring-boot.link
+          // _d70cf70bfb596341db7f282e047dda79.zxwlrjxpwn.acm-validations.aws.
             itemBuilder: (context, index) {
-              return BlogPostCard(
-                blog: blogs[index],
-                press: (){
-                  // print("blogs length"+blogs.length.toString());
-                  Navigator.push(context, MaterialPageRoute(builder: (context){
-                    return BlogDetailScreen(blog: blogs[index]);
-                  }));
-                },
+              return KeepAliveWrapper(
+                keepAlive: true,
+                child: BlogPostCard(
+                  blog: blogs[index],
+                  press: (){
+                    // print("blogs length"+blogs.length.toString());
+                    Navigator.push(context, MaterialPageRoute(builder: (context){
+                      return BlogDetailScreen(blog: blogs[index]);
+                    }));
+                  },
+                ),
               );
             },
           ),

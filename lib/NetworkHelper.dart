@@ -6,7 +6,7 @@ import 'models/Product.dart';
 
   Future<List<Blog>> getData() async{
     List<Blog> blogList = [];
-    const String apiUrl = "http://springbootblog-env.eba-i59x59qr.us-east-1.elasticbeanstalk.com/blogs";
+    const String apiUrl = "https://api2.spring-boot.link/blogs";
     // const String apiUrl = "https://api.spring-boot.link/products";
     Utf8Decoder utf8decoder = new Utf8Decoder();
     http.Response response = await http.get(Uri.parse(apiUrl));
