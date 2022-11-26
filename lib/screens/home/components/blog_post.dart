@@ -59,7 +59,7 @@ class BlogPostCard extends StatelessWidget {
                     const SizedBox(
                       width: kDefaultPadding,
                     ),
-                    Text(
+                    SelectableText(
                       // blog.getStock().toString(),
                       blog.getCreateDate(),
                       style: Theme.of(context).textTheme.caption,
@@ -69,8 +69,8 @@ class BlogPostCard extends StatelessWidget {
                 Padding(
                   padding:
                   const EdgeInsets.symmetric(vertical: kDefaultPadding),
-                  child: Text(
-                    blog.getDescription(),
+                  child: SelectableText(
+                    blog.getBlogName(),
                     // blog.getBlogName(),
                     style: TextStyle(
                       fontSize: Responsive.isDesktop(context) ? 32.0 : 24.0,
@@ -81,7 +81,7 @@ class BlogPostCard extends StatelessWidget {
                     ),
                   ),
                 ),
-                Text(
+                SelectableText(
                   readMore(blog.getDescription()),
                   maxLines: 4,
                   style: const TextStyle(
