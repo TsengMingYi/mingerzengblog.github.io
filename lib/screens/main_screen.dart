@@ -6,7 +6,6 @@ import 'package:flutter_outlook/screens/contact/contact_screen.dart';
 import 'package:flutter_outlook/screens/home/home_screen.dart';
 import 'package:flutter_outlook/screens/services/services_screen.dart';
 import 'package:get/get.dart';
-
 import '../controllers/MenuController.dart';
 import 'cases/cases_screen.dart';
 import 'components/header.dart';
