@@ -1,7 +1,6 @@
 import 'dart:convert';
 import 'package:http/http.dart' as http;
 import 'package:flutter_outlook/models/Blog.dart';
-
 import 'models/Product.dart';
 
   Future<List<Blog>> getData() async{
@@ -12,7 +11,7 @@ import 'models/Product.dart';
     http.Response response = await http.get(Uri.parse(apiUrl));
     if(response.statusCode == 200){
       String data = utf8decoder.convert(response.bodyBytes);
-      for(int i = 0;i<3;i++){
+      for(int i = 0;i<4;i++){
         Blog blog = Blog();
         int blogId = jsonDecode(data)[i]['blogId'];
         String blogName = jsonDecode(data)[i]['blogName'];
