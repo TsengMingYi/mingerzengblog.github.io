@@ -107,18 +107,15 @@ class Header extends StatelessWidget {
                   ),
                   FittedBox(
                     child: TextButton(
-                      onPressed: () {},
+                      onPressed: () {
+                        _handleURLButtonPress(context, ImageSourceType.gallery);
+                      },
                       child: Row(
-                        children: [
-                          GestureDetector(
-                            onTap: (){
-                              _handleURLButtonPress(context, ImageSourceType.gallery);
-                            },
-                            child: const Text("Learn More",
-                              style: TextStyle(
-                                fontWeight: FontWeight.bold,
-                                color: Colors.white,
-                              ),
+                        children: const [
+                          Text("Learn More",
+                            style: TextStyle(
+                              fontWeight: FontWeight.bold,
+                              color: Colors.white,
                             ),
                           ),
                           SizedBox(width: kDefaultPadding / 2,),
