@@ -84,11 +84,15 @@ class Blogs extends StatelessWidget {
                 blog: blogs[index],
                 press: (){
                   // print("blogs length"+blogs.length.toString());
-
+                  if(Responsive.isMobile(context)){
+                    Navigator.push(context, CupertinoPageRoute(builder: (context){
+                      return BlogDetailScreen(blog: blogs[index]);
+                    }));
+                  }else{
                     Navigator.push(context, MaterialPageRoute(builder: (context){
                       return BlogDetailScreen(blog: blogs[index]);
                     }));
-
+                  }
                 },
               ),
             );
