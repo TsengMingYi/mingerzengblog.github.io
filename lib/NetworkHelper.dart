@@ -11,7 +11,8 @@ import 'models/Product.dart';
     http.Response response = await http.get(Uri.parse(apiUrl));
     if(response.statusCode == 200){
       String data = utf8decoder.convert(response.bodyBytes);
-      for(int i = 0;i<3;i++){
+      int total = jsonDecode(data)['total'];
+      for(int i = 0;i<total;i++){
         Blog blog = Blog();
         int blogId = jsonDecode(data)[i]['blogId'];
         String blogName = jsonDecode(data)[i]['blogName'];
