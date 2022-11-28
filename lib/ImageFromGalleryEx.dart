@@ -107,12 +107,12 @@ class ImageFromGalleryExState extends State<ImageFromGalleryEx> {
   Future uploadImage2() async{
     var url = Uri.parse("https://api2.spring-boot.link/upload");
     var request = http.MultipartRequest("POST",url);
-    request.files.add(await http.MultipartFile.fromBytes("file", _selectedFile!, filename: "Any_name.png"),);
+    request.files.add(await http.MultipartFile.fromBytes("file", _selectedFile!, filename: "Any_name.jpg"),);
     request.send().then((response){
       if(response.statusCode == 200){
         response.stream.transform(utf8.decoder).listen((event) async {
           Map data = {
-            'blogName': "Flutter ListView",
+            'blogName': "Flutter Text",
             'category': "FLUTTER",
             "imageUrl":event.toString(),
             'description': "This is a Flutter PageView teach"
