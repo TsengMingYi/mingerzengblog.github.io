@@ -14,6 +14,8 @@ import 'components/search.dart';
 class HomeScreen extends StatelessWidget {
   const HomeScreen({Key? key}) : super(key: key);
 
+
+
   @override
   Widget build(BuildContext context) {
     return Row(
@@ -62,6 +64,7 @@ class Blogs extends StatelessWidget {
   const Blogs({Key? key, required this.blogs}) : super(key: key);
 
   final List<Blog> blogs;
+
   // final List<Product> products;
   @override
   Widget build(BuildContext context) {
