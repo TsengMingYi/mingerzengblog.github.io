@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_outlook/NetworkHelper.dart';
 import 'package:flutter_outlook/constants.dart';
@@ -83,9 +84,11 @@ class Blogs extends StatelessWidget {
                 blog: blogs[index],
                 press: (){
                   // print("blogs length"+blogs.length.toString());
-                  Navigator.push(context, MaterialPageRoute(builder: (context){
-                    return BlogDetailScreen(blog: blogs[index]);
-                  }));
+
+                    Navigator.push(context, MaterialPageRoute(builder: (context){
+                      return BlogDetailScreen(blog: blogs[index]);
+                    }));
+
                 },
               ),
             );
