@@ -18,6 +18,13 @@ import 'models/Product.dart';
         String blogName = jsonDecode(data)['results'][i]['blogName'];
         String category = jsonDecode(data)['results'][i]['category'];
         String imageUrl = jsonDecode(data)['results'][i]['imageUrl'];
+        if(jsonDecode(data)['results'][i]['imageUrl1'] != null){
+          String imageUrl1 = jsonDecode(data)['results'][i]['imageUrl1'];
+          blog.setImageUrl1(imageUrl1);
+        }else{
+          String imageUrl1 = "";
+          blog.setImageUrl1(imageUrl1);
+        }
         String description = jsonDecode(data)['results'][i]['description'];
         String createDate = jsonDecode(data)['results'][i]['createdDate'];
         String newCreateDate = createDate.substring(0,10);

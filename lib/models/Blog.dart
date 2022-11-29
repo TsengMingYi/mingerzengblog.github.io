@@ -5,6 +5,7 @@ class Blog {
   late final String _blogName;
   late final String _description;
   late final String _imageUrl;
+  late final String _imageUrl1;
   late final int _blogId;
   // Blog({required int blogId,required String blogName,required String category,required String description,required String imageUrl,required String createDate,required String lastModifiedDate}){
   //   this.blogId = blogId;
@@ -50,6 +51,14 @@ class Blog {
 
   String getImageUrl() {
     return _imageUrl;
+  }
+
+  void setImageUrl1(String imageUrl1) {
+    _imageUrl1 = imageUrl1;
+  }
+
+  String getImageUrl1() {
+    return _imageUrl1;
   }
   void setCreateDate(String createDate) {
     _createDate = createDate;
