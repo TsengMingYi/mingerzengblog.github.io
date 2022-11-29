@@ -33,14 +33,12 @@ class BlogDetailScreen extends StatelessWidget {
                 blog.getImageUrl(),
                 fit: BoxFit.cover,
               ),
-              blog.getImageUrl1().length < 2
-                  ? Container()
-                  : Image.network(
-                      blog.getImageUrl(),
-                      fit: BoxFit.cover,
-                    ),
               SelectableText(
                 blog.getDescription(),
+              ),
+              Image.network(
+                blog.getImageUrl1(),
+                fit: BoxFit.cover,
               ),
               SelectableText(
                 blog.getCreateDate(),
