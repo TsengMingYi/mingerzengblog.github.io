@@ -33,7 +33,6 @@ class HomeScreen extends StatelessWidget {
                       // blogs: snapshot.data!,
                     )
                   : Center(child: Image.asset("assets/images/2.png"));
-
                   // : Center(child: Image.asset("assets/ripple.gif"));
             },
           ),
