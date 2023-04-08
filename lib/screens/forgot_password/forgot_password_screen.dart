@@ -16,7 +16,7 @@ class ForgotPasswordScreen extends StatelessWidget {
           ),
         ),
       ),
-      body: Body(),
+      body: const Body(),
     );
   }
 }
