@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_outlook/controllers/MenuController.dart';
+import 'package:flutter_outlook/controllers/MenuController.dart' as prefix;
 import 'package:flutter_outlook/responsive.dart';
 import 'package:flutter_outlook/screens/components/socal.dart';
 import 'package:flutter_outlook/screens/components/web_menu.dart';
@@ -15,7 +15,7 @@ class Header extends StatelessWidget {
         MaterialPageRoute(builder: (context) => ImageFromGalleryEx()));
   }
 
-  final MenuController _controller = Get.put(MenuController());
+  final prefix.MenuController _controller = Get.put(prefix.MenuController());
 
   @override
   Widget build(BuildContext context) {

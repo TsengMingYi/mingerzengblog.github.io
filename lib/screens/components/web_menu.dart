@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_outlook/controllers/MenuController.dart';
+import 'package:flutter_outlook/controllers/MenuController.dart' as prefix;
 import 'package:get/get.dart';
 import '../../constants.dart';
 
 class WebMenu extends StatelessWidget {
-  final MenuController _controller = Get.put(MenuController());
+  final prefix.MenuController _controller = Get.put(prefix.MenuController());
 
   @override
   Widget build(BuildContext context) {

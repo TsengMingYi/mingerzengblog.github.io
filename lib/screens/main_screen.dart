@@ -6,13 +6,13 @@ import 'package:flutter_outlook/screens/contact/contact_screen.dart';
 import 'package:flutter_outlook/screens/home/home_screen.dart';
 import 'package:flutter_outlook/screens/services/services_screen.dart';
 import 'package:get/get.dart';
-import '../controllers/MenuController.dart';
+import 'package:flutter_outlook/controllers/MenuController.dart' as prefix;
 import 'cases/cases_screen.dart';
 import 'components/header.dart';
 import 'components/side_menu.dart';
 
 class MainScreen extends StatelessWidget {
-  final MenuController _controller = Get.put(MenuController());
+  final prefix.MenuController _controller = Get.put(prefix.MenuController());
   @override
   Widget build(BuildContext context) {
     return Scaffold(
