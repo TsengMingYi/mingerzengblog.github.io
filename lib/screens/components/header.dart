@@ -12,7 +12,7 @@ class Header extends StatelessWidget {
 
   void _handleURLButtonPress(BuildContext context, var type) {
     Navigator.push(context,
-        MaterialPageRoute(builder: (context) => ImageFromGalleryEx(type)));
+        MaterialPageRoute(builder: (context) => ImageFromGalleryEx()));
   }
 
   final MenuController _controller = Get.put(MenuController());
@@ -108,7 +108,7 @@ class Header extends StatelessWidget {
                   FittedBox(
                     child: TextButton(
                       onPressed: () {
-                        _handleURLButtonPress(context, ImageSourceType.gallery);
+                        // _handleURLButtonPress(context, ImageSourceType.gallery);
                       },
                       child: Row(
                         children: const [

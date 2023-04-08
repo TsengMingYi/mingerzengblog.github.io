@@ -29,20 +29,25 @@ class BlogDetailScreen extends StatelessWidget {
         child: SingleChildScrollView(
           child: Column(
             children: [
+              const SizedBox(height: 20,),
               Image.network(
                 blog.getImageUrl(),
                 fit: BoxFit.cover,
               ),
+              const SizedBox(height: 20,),
               SelectableText(
                 blog.getDescription(),
               ),
+              const SizedBox(height: 20,),
               Image.network(
                 blog.getImageUrl1(),
                 fit: BoxFit.cover,
               ),
+              const SizedBox(height: 20,),
               SelectableText(
                 blog.getCreateDate(),
               ),
+              const SizedBox(height: 20,),
             ],
           ),
         ),

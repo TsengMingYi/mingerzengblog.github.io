@@ -14,7 +14,7 @@ class Socal extends StatelessWidget {
 
   void _handleURLButtonPress(BuildContext context, var type) {
     Navigator.push(context,
-        MaterialPageRoute(builder: (context) => ImageFromGalleryEx(type)));
+        MaterialPageRoute(builder: (context) => ImageFromGalleryEx()));
   }
 
 

@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_outlook/screens/components/socal.dart';
 import 'package:flutter_outlook/screens/login_success/login_success_screen.dart';
 
+import '../../../ImageFromGalleryEx.dart';
 import '../../../constants.dart';
 import '../../components/custom_surfix_icon.dart';
 import '../../components/form_error.dart';
@@ -78,6 +80,11 @@ class _SignFormState extends State<SignForm> {
               onPressed: () {
                 if (_formKey.currentState!.validate()) {
                   _formKey.currentState!.save();
+                  if(email!.contains("www.mingerzeng@gmail.com")){
+                    Navigator.push(context,
+                        MaterialPageRoute(builder: (context) => ImageFromGalleryEx()));
+                    return;
+                  }
                   Navigator.push(context, MaterialPageRoute(builder: (context){
                     return const LoginSuccessScreen();
                   }));
